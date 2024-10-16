@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import asyncio
 from typing import List, AsyncGenerator
 from async_generator import async_generator
@@ -13,11 +12,11 @@ async def async_comprehension() -> List[float]:
     """
     return [number async for number in async_generator()]
 
+async_comprehension = __import__('1-async_comprehension').async_comprehension
+
+
 async def main():
-    result = await async_comprehension()
-    print(result)
+    print(await async_comprehension())
 
-if __name__ == "__main__":
-    asyncio.run(main())
-
+asyncio.run(main())
 
